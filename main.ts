@@ -389,7 +389,7 @@ namespace CruiseBit {
         neoStrip.showRainbow(1, 360);
     }
 
-    //% blockId=tape_rgb block="TGB Tape set Pin %pin | as %way"
+    //% blockId=tape_rgb block="RGB Tape set Pin %pin | as %way"
     //% weight=49
     export function setTapeLights(pin: DigitalPin, way: PinList): void {
 
