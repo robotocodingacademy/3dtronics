@@ -3,7 +3,7 @@ enum ToneHzTable {
     re = 294,
     mi = 330,
     fa = 349,
-    sol = 392,
+    so = 392,
     la = 440,
     si = 494
 }
@@ -84,7 +84,7 @@ enum ColorList {
     green = 4,
     //% block="blue"
     blue = 5,
-    //% block="靛"
+    //% block="indigo"
     indigo = 6,
     //% block="pink"
     violet = 7,
@@ -96,11 +96,11 @@ enum ColorList {
     black = 1
 }
 enum PinList {
-    //% block="上"
+    //% block="up"
     up_pull = 1,
-    //% block="下"
+    //% block="down"
     down_pull = 2,
-    //% block="无"
+    //% block="none"
     no_pull = 3
 }
 
@@ -389,7 +389,7 @@ namespace CruiseBit {
         neoStrip.showRainbow(1, 360);
     }
 
-    //% blockId=tape_rgb block="设置拉 引脚 %pin| 为 %way"
+    //% blockId=tape_rgb block="TGB Tape set Pin %pin | as %way"
     //% weight=49
     export function setTapeLights(pin: DigitalPin, way: PinList): void {
 
