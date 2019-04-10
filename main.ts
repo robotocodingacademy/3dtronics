@@ -415,7 +415,7 @@ namespace CruiseBit {
     //% weight=99
      export function statement(){
         CruiseBit.setTapeLights(P11, up_pull);
-        CruiseBit.setTapeLights(P12, up_pull)
+        CruiseBit.setTapeLights(P12, up_pull);
     }
 
 }
