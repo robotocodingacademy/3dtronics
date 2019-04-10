@@ -103,28 +103,28 @@ enum PinList {
     //% block="none"
     no_pull = 3
 }
-
+   
 //% weight=99 icon="\uf0e7" color=#1B80C4
 namespace CruiseBit {
 
     let neoStrip = neopixel.create(DigitalPin.P1, 9, NeoPixelMode.RGB);
 
-    //% blockId="cruise_motor" block="Cruiser motor: leftmtr%leftSpeed | rightmtr%rightSpeed"
+    //% blockId="cruise_motor" block="Cruiser motor: leftmtr%leftSpeed | rightmtr%rightSpeed | Time%time s"
     //% leftSpeed.min=-1023 leftSpeed.max=1023
     //% rightSpeed.min=-1023 rightSpeed.max=1023
     //% weight=100
-    export function motorRun(leftSpeed: number, rightSpeed: number): void {
+    export function motorRun(leftSpeed: number, rightSpeed: number, time: number): void {
         let leftRotation = 1;
-        if (leftSpeed < 0) {
+        if(leftSpeed < 0){
             leftRotation = 0;
         }
 
         let rightRotation = 1;
-        if (rightSpeed < 0) {
+        if(rightSpeed < 0){
             rightRotation = 0;
         }
-
-        //M1
+        
+       //M1
         pins.analogWritePin(AnalogPin.P14, Math.abs(leftSpeed));
         pins.digitalWritePin(DigitalPin.P13, leftRotation);
 
@@ -132,16 +132,22 @@ namespace CruiseBit {
         pins.analogWritePin(AnalogPin.P16, Math.abs(rightSpeed));
         pins.digitalWritePin(DigitalPin.P15, rightRotation);
 
+        if(time < 0){
+            time = 0;
+        }
+        
+        let time_num = time*1000000;
+
+        control.waitMicros(time_num);
 
         //M1
         pins.analogWritePin(AnalogPin.P14, 0);
         pins.digitalWritePin(DigitalPin.P13, 0);
-
         //M2
         pins.analogWritePin(AnalogPin.P16, 0);
         pins.digitalWritePin(DigitalPin.P15, 0);
-
-
+        
+        
     }
 
 
