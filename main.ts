@@ -413,9 +413,9 @@ namespace CruiseBit {
     }
         //% blockId=initialize_cruise_bit block="Initialize Cruise Bit"
     //% weight=99
-    export function setTapeLights(pin: DigitalPin, way: PinList): void {
-        setTapeLights(DigitalPin.P11, PinList.up_pull)
-        setTapeLights(DigitalPin.P12, PinList.up_pull)
+    export function setTapeLights(): void {
+        setTapeLights(P11, up_pull)
+        setTapeLights(P12, up_pull)
     }
 
 }
