@@ -411,11 +411,4 @@ namespace CruiseBit {
 
 
     }
-    //% blockId=initialize_cruise_bit block="Initialize Cruise Bit"
-    //% weight=99
-     export function statement(){
-        CruiseBit.setTapeLights(P11, up_pull);
-        CruiseBit.setTapeLights(P12, up_pull);
-    }
-
 }
