@@ -202,13 +202,13 @@ namespace CruiseBit {
                 return false;
             }
         } else if (patrol == Patrol.white_black) {
-            if (pins.digitalReadPin(DigitalPin.P12) == 1 && pins.digitalReadPin(DigitalPin.P11) == 0) {
+            if (pins.digitalReadPin(DigitalPin.P12) == 0 && pins.digitalReadPin(DigitalPin.P11) == 1) {
                 return true;
             } else {
                 return false;
             }
         } else if (patrol == Patrol.black_white) {
-            if (pins.digitalReadPin(DigitalPin.P12) == 0 && pins.digitalReadPin(DigitalPin.P11) == 1) {
+            if (pins.digitalReadPin(DigitalPin.P12) == 1 && pins.digitalReadPin(DigitalPin.P11) == 0) {
                 return true;
             } else {
                 return false;
